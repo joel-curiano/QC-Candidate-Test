@@ -23,11 +23,15 @@ const CORS = {
 };
 
 function json(data: unknown, status = 200): Response {
-  return new Response(JSON.stringify(data), {
+  // postgres RowList is array-like but not a plain Array; spreading it ensures
+  // JSON.stringify produces [...] instead of {}, so .map()/.filter() work on the frontend.
+  const payload = Array.isArray(data) ? data : (data != null && typeof (data as any)[Symbol.iterator] === 'function' && typeof data !== 'string') ? [...(data as Iterable<unknown>)] : data;
+  return new Response(JSON.stringify(payload), {
     status,
     headers: { ...CORS, "Content-Type": "application/json" },
   });
 }
+
 
 function jsonError(message: string, status = 400): Response {
   return json({ error: message }, status);
