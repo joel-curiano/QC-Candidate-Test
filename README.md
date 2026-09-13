@@ -142,8 +142,8 @@ supabase functions deploy api --project-ref YOUR_PROJECT_REF --no-verify-jwt
 Example:
 
 ```bash
-supabase functions deploy api --project-ref fnbsrjlyyvcvsaxqyvk --no-verify-jwt
-```
+supabase functions deploy api --project-ref fnbsrjljyyvvcsaxyqvk --no-verify-jwt
+``` 
 
 > Note: local Supabase CLI deployment may require Docker Desktop or Podman to be installed and available on your PATH.
 
