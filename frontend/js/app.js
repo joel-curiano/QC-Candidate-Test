@@ -981,16 +981,17 @@ window.loadCandSchedule = function() {
   if (!c) { panel.innerHTML = ''; return; }
 
   const today = new Date().toISOString().slice(0, 10);
-  const minDate = c.test_date ? (c.test_date < today ? c.test_date : today) : today;
+  const scheduledDate = c.test_date ? String(c.test_date).slice(0, 10) : '';
+  const minDate = scheduledDate ? (scheduledDate < today ? scheduledDate : today) : today;
   panel.innerHTML = `
     <hr class="divider" />
     <div style="font-size:0.85rem;margin-bottom:12px">
       <strong>Email:</strong> ${esc(c.email)} &nbsp;|&nbsp;
-      <strong>Current Test Date:</strong> ${c.test_date ? formatDate(c.test_date) : 'Not scheduled'}
+      <strong>Current Test Date:</strong> ${scheduledDate ? formatDate(c.test_date) : 'Not scheduled'}
     </div>
     <div id="schedMsg"></div>
     <div class="form-group"><label>Test Date</label>
-      <input type="date" id="schedDate" value="${c.test_date||today}" min="${minDate}" style="width:200px" /></div>
+      <input type="date" id="schedDate" value="${scheduledDate || today}" min="${minDate}" style="width:200px" /></div>
     <button class="btn btn-primary" onclick="saveSchedule(${c.id})">Save Schedule</button>`;
 };
 

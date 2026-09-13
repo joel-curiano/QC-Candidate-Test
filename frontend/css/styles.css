@@ -7,24 +7,24 @@
 
 /* ---- Design tokens ---------------------------------------- */
 :root {
-  --red: #b51f2d;
-  --red-bright: #d63040;
-  --red-glow: rgba(181, 31, 45, 0.3);
-  --navy: #0d1526;
-  --navy-mid: #152040;
-  --navy-card: rgba(21, 32, 64, 0.85);
-  --sidebar-bg: #111c35;
-  --sidebar-active: rgba(181, 31, 45, 0.18);
-  --border: rgba(99, 132, 200, 0.18);
-  --border-focus: rgba(181, 31, 45, 0.6);
-  --text: #e8edf5;
-  --text-muted: #8898b8;
-  --text-dim: #566280;
+  --red: #c8102e;
+  --red-bright: #ef3340;
+  --red-glow: rgba(200, 16, 46, 0.3);
+  --navy: #171717;
+  --navy-mid: #242424;
+  --navy-card: rgba(36, 36, 36, 0.92);
+  --sidebar-bg: #101010;
+  --sidebar-active: rgba(200, 16, 46, 0.2);
+  --border: rgba(255, 255, 255, 0.14);
+  --border-focus: rgba(239, 51, 64, 0.7);
+  --text: #f7f7f5;
+  --text-muted: #b5b5b0;
+  --text-dim: #777772;
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  --info: #3b82f6;
-  --glass: rgba(15, 24, 48, 0.7);
+  --info: #9fc5d8;
+  --glass: rgba(28, 28, 28, 0.82);
   --radius: 14px;
   --radius-sm: 8px;
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -55,8 +55,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(181,31,45,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(59,130,246,0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(200,16,46,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(255,255,255,0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -268,7 +268,7 @@ h3 {
   backdrop-filter: blur(10px);
   transition: border-color var(--transition);
 }
-.card:hover { border-color: rgba(99,132,200,0.3); }
+.card:hover { border-color: rgba(255,255,255,0.28); }
 .card + .card { margin-top: 16px; }
 .card-title {
   font-size: 0.95rem;
@@ -299,7 +299,7 @@ input[type="number"],
 select,
 textarea {
   width: 100%;
-  background: rgba(13, 21, 38, 0.8);
+  background: rgba(10, 10, 10, 0.78);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -390,12 +390,12 @@ select option { background: var(--navy-mid); }
 .alert-error { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; }
 .alert-success { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
 .alert-warning { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); color: #fcd34d; }
-.alert-info { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); color: #93c5fd; }
+.alert-info { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #e5e5e2; }
 
 /* ---- Tables ----------------------------------------------- */
 .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
 table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
-thead tr { background: rgba(21,32,64,0.9); }
+thead tr { background: rgba(255,255,255,0.06); }
 th {
   padding: 10px 14px;
   text-align: left;
@@ -409,7 +409,7 @@ th {
 }
 td {
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(99,132,200,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   color: var(--text);
   vertical-align: top;
 }
@@ -431,7 +431,7 @@ tbody tr:hover { background: rgba(255,255,255,0.03); }
 
 /* ---- Progress bar ----------------------------------------- */
 .progress-bar-wrap {
-  background: rgba(99,132,200,0.1);
+  background: rgba(255,255,255,0.1);
   border-radius: 99px;
   height: 6px;
   overflow: hidden;
@@ -477,7 +477,7 @@ tbody tr:hover { background: rgba(255,255,255,0.03); }
   backdrop-filter: blur(10px);
   transition: border-color var(--transition);
 }
-.question-card:hover { border-color: rgba(99,132,200,0.3); }
+.question-card:hover { border-color: rgba(255,255,255,0.28); }
 .question-num {
   font-size: 0.7rem;
   font-weight: 700;
@@ -506,7 +506,7 @@ tbody tr:hover { background: rgba(255,255,255,0.03); }
 }
 .radio-option:hover { border-color: var(--red); background: var(--sidebar-active); }
 .radio-option input[type="radio"] { accent-color: var(--red); cursor: pointer; }
-.radio-option.selected { border-color: var(--red); background: rgba(181,31,45,0.1); }
+.radio-option.selected { border-color: var(--red); background: rgba(200,16,46,0.1); }
 .question-type-tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -517,17 +517,17 @@ tbody tr:hover { background: rgba(255,255,255,0.03); }
   border-radius: 4px;
   margin-bottom: 8px;
 }
-.tag-essay { background: rgba(59,130,246,0.15); color: #93c5fd; }
+.tag-essay { background: rgba(255,255,255,0.1); color: #e5e5e2; }
 .tag-oral { background: rgba(139,92,246,0.15); color: #c4b5fd; }
 .tag-practicum { background: rgba(16,185,129,0.15); color: #6ee7b7; }
 .tag-practical { background: rgba(245,158,11,0.15); color: #fcd34d; }
 .rubric-box {
-  background: rgba(59,130,246,0.06);
-  border: 1px solid rgba(59,130,246,0.2);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.16);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
   font-size: 0.8rem;
-  color: #93c5fd;
+  color: #e5e5e2;
   margin: 8px 0 12px;
   line-height: 1.6;
 }
