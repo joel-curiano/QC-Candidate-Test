@@ -7,5 +7,5 @@
  * Format: https://YOUR_PROJECT_REF.supabase.co/functions/v1/api
  */
 const CONFIG = {
-  API_URL: 'https://YOUR_PROJECT_REF.supabase.co/functions/v1/api',
+  API_URL: 'https://fnbsrjlyyvcvsaxqyvk.supabase.co/functions/v1/api',
 };
