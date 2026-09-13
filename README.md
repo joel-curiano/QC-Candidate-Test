@@ -153,9 +153,9 @@ supabase functions deploy api --project-ref fnbsrjlyyvcvsaxqyvk --no-verify-jwt
 
 1. Open **GitHub → Repo → Settings → Pages**
 2. Set **Source** to **GitHub Actions**
-3. Push to `main`
+3. Push your code to `main` (this is the step that triggers the Pages workflow)
 4. Wait for the workflow to finish
-5. Copy the generated Pages URL
+5. Copy the generated Pages URL from the same **Pages** screen
 
 Your site will usually look like this:
 

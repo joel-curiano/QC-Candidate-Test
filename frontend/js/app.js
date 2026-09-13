@@ -1361,7 +1361,8 @@ async function renderQuestions() {
         <button class="btn btn-danger" onclick="wipeArchived()">Wipe Archived Questions & Candidate Records</button>`)}` : '';
 
     const browseRows = questions.map(q => {
-      const optsList = q.q_type === 'mcq' ? (JSON.parse(q.options||'[]') as string[]).map((o:string) =>
+      const parsedOptions = Array.isArray(JSON.parse(q.options || '[]')) ? JSON.parse(q.options || '[]') : [];
+      const optsList = q.q_type === 'mcq' ? parsedOptions.map((o) =>
         `<div style="font-size:0.8rem;color:${o===q.correct_answer?'var(--success)':'var(--text-muted)'}">${o===q.correct_answer?'✅ ':'⬜ '}${esc(o)}</div>`).join('') : '';
       const buttons = isAdmin ? (q.is_used ?
         `<button class="btn btn-secondary btn-sm" onclick="setActive(${q.id},${!q.active})">${q.active?'Archive':'Restore'}</button>
@@ -1472,7 +1473,8 @@ window.filterQuestions = function() {
   if (!container) return;
   if (!filtered.length) { container.innerHTML = `<div class="alert alert-info">No questions match the selected filters.</div>`; return; }
   container.innerHTML = filtered.map(q => {
-    const optsList = q.q_type === 'mcq' ? (JSON.parse(q.options||'[]') as string[]).map((o:string) =>
+    const parsedOptions = Array.isArray(JSON.parse(q.options || '[]')) ? JSON.parse(q.options || '[]') : [];
+    const optsList = q.q_type === 'mcq' ? parsedOptions.map((o) =>
       `<div style="font-size:0.8rem;color:${o===q.correct_answer?'var(--success)':'var(--text-muted)'}">${o===q.correct_answer?'✅ ':'⬜ '}${esc(o)}</div>`).join('') : '';
     const isAdmin = State.user.role === 'Admin';
     const buttons = isAdmin ? (q.is_used ?
