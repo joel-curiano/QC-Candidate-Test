@@ -21,8 +21,7 @@ GitHub Pages (frontend/)              Supabase Edge Functions
 ## 1. Prerequisites
 
 - A [Supabase](https://supabase.com) project with the schema already applied (`supabase/schema.sql`)
-- **Sign up at [brevo.com](https://www.brevo.com)** (free, 300 emails/day). Go to **Senders & IP → Senders → Add a new sender**, enter any email address you own, click the confirmation link Brevo sends you — no domain needed.
-- A [Brevo](https://www.brevo.com) account (free tier — 300 emails/day) for invitation emails. No domain required — verify a single email address.
+- A [Brevo](https://www.brevo.com) account (free tier — 300 emails/day) for invitation emails. Go to **Senders & IP → Senders → Add a new sender**, enter an email address you own, and click Brevo's confirmation link. No domain is required.
 - A GitHub repository with GitHub Pages enabled
 
 ---
@@ -33,7 +32,7 @@ In **Supabase Dashboard → Project → Edge Functions → Secrets**, add:
 
 | Secret | Value |
 |---|---|
-| `SUPABASE_DB_URL` | Session pooler URI — same value as before (from Supabase → Connect) |
+| `SUPABASE_DB_URL` | The PostgreSQL **session pooler** URI from Supabase → Connect → Session pooler. Keep the URI's username, password, host, port, and database name unchanged. |
 | `JWT_SECRET` | A strong random string (≥32 characters) used to sign login tokens |
 | `BREVO_API_KEY` | From Brevo dashboard → SMTP & API → API Keys → Create a new API key |
 | `SMTP_FROM`     | Your verified sender email address — any email you own (e.g. `yourname@gmail.com`). Verify it at Brevo → Senders & IP → Senders. |
@@ -66,7 +65,7 @@ Add these secrets to **GitHub → Repo → Settings → Secrets and variables �
 | `SUPABASE_ACCESS_TOKEN` | From https://supabase.com/dashboard/account/tokens |
 | `SUPABASE_PROJECT_REF` | Your project reference ID |
 
-Push to `main` — the `deploy-edge-functions.yml` workflow deploys automatically.
+Push to `main` — the included `.github/workflows/deploy-edge-functions.yml` workflow deploys automatically.
 
 ### Option B — Supabase CLI (local)
 
@@ -82,7 +81,7 @@ supabase functions deploy api --project-ref YOUR_PROJECT_REF --no-verify-jwt
 
 1. Go to **GitHub → Repo → Settings → Pages**
 2. Source: **GitHub Actions**
-3. Push to `main` — the `deploy-pages.yml` workflow deploys `frontend/` automatically
+3. Push to `main` — the included `.github/workflows/deploy-pages.yml` workflow deploys `frontend/` automatically
 
 Open your GitHub Pages URL. On the first visit, create the initial administrator. This account is stored in Supabase and works in all deployments sharing the same database.
 
@@ -127,7 +126,7 @@ python scripts/generate_aramco_question_template.py
 | `supabase/functions/api/index.ts` | Edge Function router (all API endpoints) |
 | `supabase/functions/api/_db.ts` | PostgreSQL data layer (replaces `database.py`) |
 | `supabase/functions/api/_auth.ts` | JWT + PBKDF2 password hashing |
-| `supabase/functions/api/_email.ts` | Resend HTTP email (replaces `email_service.py`) |
+| `supabase/functions/api/_email.ts` | Brevo HTTP email delivery (replaces `email_service.py`) |
 | `supabase/functions/api/_excel.ts` | Excel import/export via SheetJS |
 | `supabase/schema.sql` | One-time PostgreSQL schema setup (unchanged) |
 | `seed_questions.json` | Sample question bank |
