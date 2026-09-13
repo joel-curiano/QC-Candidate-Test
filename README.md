@@ -33,10 +33,16 @@ In **Supabase Dashboard → Project → Edge Functions → Secrets**, add:
 | Secret | Value |
 |---|---|
 | `SUPABASE_DB_URL` | The PostgreSQL **session pooler** URI from Supabase → Connect → Session pooler. Keep the URI's username, password, host, port, and database name unchanged. |
-| `JWT_SECRET` | A strong random string (≥32 characters) used to sign login tokens |
+| `JWT_SECRET` | A strong random string (≥32 characters) used to sign and verify the app’s own JWT login tokens. This secret must match across all deployments of the same project; generate it with a secure random password generator, PowerShell, or Bash, and store it only in Supabase Edge Function secrets. |
+
+Generate it locally with:
+```bash
+# Bash / Git Bash / macOS / Linux
+openssl rand -base64 32
+```
 | `BREVO_API_KEY` | From Brevo dashboard → SMTP & API → API Keys → Create a new API key |
 | `SMTP_FROM`     | Your verified sender email address — any email you own (e.g. `yourname@gmail.com`). Verify it at Brevo → Senders & IP → Senders. |
-| `APP_URL` | Your GitHub Pages URL, e.g. `https://yourusername.github.io/QC-Candidate-Test` |
+| `APP_URL` | Your GitHub Pages URL, e.g. `https://yourusername.github.io/QC-Candidate-Test`. You can get this from GitHub → Repository → Settings → Pages, where GitHub shows the live Pages URL after deployment. |
 
 ---
 
