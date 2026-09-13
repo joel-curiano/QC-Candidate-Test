@@ -1,0 +1,74 @@
+[
+  [
+    "Welding QC",
+    "mcq",
+    "Which of the following is considered an essential variable for SMAW procedure qualification under ASME Section IX?",
+    "[\"Change in base metal P-Number\", \"Change in brand of welding machine\", \"Minor decrease in preheat within 10\\u00b0C\", \"Change in lighting conditions\"]",
+    "Change in base metal P-Number",
+    "",
+    10
+  ],
+  [
+    "Welding QC",
+    "essay",
+    "Explain the primary causes of hydrogen-induced cracking (cold cracking) in carbon steel weldments and describe three preventive measures.",
+    null,
+    null,
+    "Check for: 1. Diffusible hydrogen present, 2. Susceptible microstructure (martensite), 3. High residual stress. Mitigations: low-hydrogen electrodes, preheating, post-weld heat treatment (PWHT).",
+    20
+  ],
+  [
+    "NDT QC",
+    "mcq",
+    "In Radiographic Testing (RT), what artifact is used to evaluate radiographic sensitivity and image quality?",
+    "[\"Pie Gauge\", \"IQI / Penetrameter\", \"Field Indicator\", \"Step Wedge Calibrator\"]",
+    "IQI / Penetrameter",
+    "",
+    10
+  ],
+  [
+    "NDT QC",
+    "essay",
+    "Compare Ultrasonic Testing (UT) vs. Radiographic Testing (RT) for volumetric inspection of heavy-wall piping butt welds. What are the key limitations of each?",
+    null,
+    null,
+    "Check for: UT advantages for planar flaws and depth sizing; UT limitations on geometry and operator dependency. RT advantages for volumetric flaws (porosity, slag) and permanent record; RT limitations on radiation safety and tight crack detection orientation.",
+    20
+  ],
+  [
+    "Piping QC",
+    "mcq",
+    "Per ASME B31.3, what is standard hydrostatic test pressure for metallic piping systems?",
+    "[\"1.1 times design pressure\", \"1.5 times design pressure (adjusted for allowable stress ratio)\", \"Equal to operating pressure\", \"2.0 times maximum allowable pressure\"]",
+    "1.5 times design pressure (adjusted for allowable stress ratio)",
+    "",
+    10
+  ],
+  [
+    "Piping QC",
+    "essay",
+    "Outline the mandatory verification steps a QC Inspector must perform before authorizing pressure testing (hydrotest) on an installed piping circuit.",
+    null,
+    null,
+    "Check for: Punch list completion (Category A cleared), NDT complete and approved, test gauges calibrated, vents/drains correctly placed, test blind ratings verified, spring supports locked/unlocked as required.",
+    20
+  ],
+  [
+    "Civil QC",
+    "mcq",
+    "During a Civil QC inspection, a result does not meet the approved acceptance criteria. What should you do?",
+    "[\"Record and report the nonconformance\", \"Ignore the result\", \"Change the acceptance criteria\", \"Approve without evidence\"]",
+    "Record and report the nonconformance",
+    "",
+    10
+  ],
+  [
+    "Civil QC",
+    "essay",
+    "Describe your inspection plan before, during, and after a concrete pour. Explain the records you would retain and how you would handle a nonconformance.",
+    null,
+    null,
+    "Award up to 5 points each for: approved documents and criteria; inspection steps and evidence; nonconformance handling; verified closure and traceability. Adapt technical criteria to the project.",
+    20
+  ]
+]

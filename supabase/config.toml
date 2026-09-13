@@ -1,0 +1,5 @@
+project_id = "YOUR_PROJECT_REF"
+
+[functions.api]
+# We verify our own JWTs; disable Supabase's built-in JWT check.
+verify_jwt = false
