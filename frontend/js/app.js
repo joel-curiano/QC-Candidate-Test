@@ -976,8 +976,7 @@ window.loadCandSchedule = function() {
   const sel = document.getElementById('candSelect');
   const panel = document.getElementById('schedPanel');
   if (!sel || !panel) return;
-  const cid = parseInt(sel.value);
-  const c = (window._schedCandidates || []).find(x => x.id === cid);
+  const c = (window._schedCandidates || []).find(x => String(x.id) === String(sel.value));
   if (!c) { panel.innerHTML = ''; return; }
 
   const today = new Date().toISOString().slice(0, 10);
